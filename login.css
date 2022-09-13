@@ -1,0 +1,38 @@
+@import "./node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.login-button {
+  margin-left: 1vw;
+}
+
+.password-section {
+  position: relative;
+  margin-top: 5px;
+}
+
+.password-eye {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+
+.password-eye:hover {
+  color: red;
+  cursor: pointer;
+}
