@@ -2,13 +2,14 @@ const loginButton = document.querySelector(".login-button");
 const idInput = document.querySelector(".id-input");
 const passwordInput = document.querySelector(".password-input");
 const passwordEye = document.querySelector(".password-eye");
-
-console.log(passwordInput.type);
+const loginMessage = document.querySelector(".login-message");
+const loginErrorMessage = document.querySelector(".login-error-message");
 
 loginButton.addEventListener("click", loginButtonClickEvent);
-
 passwordEye.addEventListener("click", passwordEyeClickEvent);
 
+let loggedInId = "";
+// Read account.json file
 let accounts = {};
 const accountUrl = "./accounts.json";
 const requestJson = new XMLHttpRequest();
@@ -20,11 +21,31 @@ requestJson.onload = () => {
 };
 
 function loginButtonClickEvent() {
+  loginErrorMessage.classList.remove("hidden");
+  if (idInput.value === "") {
+    loginErrorMessage.innerHTML = "아이디를 입력하세요";
+    idInput.focus();
+    return;
+  }
+
+  if (passwordInput.value === "") {
+    loginErrorMessage.innerHTML = "비밀번호를 입력하세요";
+    passwordInput.focus();
+    return;
+  }
+
   accounts.forEach((element) => {
     if (idInput.value === element.ID && passwordInput.value === element.PW) {
-      console.log(`Hello ${idInput.value}`);
+      loggedInId = idInput.value;
+      loginMessage.innerHTML = `Hello "${loggedInId}"`;
+      loginMessage.classList.remove("hidden");
+      loginErrorMessage.classList.add("hidden");
     }
   });
+
+  if (loggedInId === "") {
+    loginErrorMessage.innerHTML = "잘못된 계정입니다.";
+  }
 }
 
 function passwordEyeClickEvent() {

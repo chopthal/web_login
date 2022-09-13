@@ -2,6 +2,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -35,4 +36,8 @@ body {
 .password-eye:hover {
   color: red;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
