@@ -1,14 +1,17 @@
+let loggedInId = "";
+
 const loginButton = document.querySelector(".login-button");
 const idInput = document.querySelector(".id-input");
 const passwordInput = document.querySelector(".password-input");
 const passwordEye = document.querySelector(".password-eye");
 const loginMessage = document.querySelector(".login-message");
 const loginErrorMessage = document.querySelector(".login-error-message");
+const logoutButton = document.querySelector(".logout-button");
 
 loginButton.addEventListener("click", loginButtonClickEvent);
+logoutButton.addEventListener("click", logoutButtonClickEvent);
 passwordEye.addEventListener("click", passwordEyeClickEvent);
 
-let loggedInId = "";
 // Read account.json file
 let accounts = {};
 const accountUrl = "./accounts.json";
@@ -39,6 +42,7 @@ function loginButtonClickEvent() {
       loggedInId = idInput.value;
       loginMessage.innerHTML = `Hello "${loggedInId}"`;
       loginMessage.classList.remove("hidden");
+      logoutButton.classList.remove("hidden");
       loginErrorMessage.classList.add("hidden");
     }
   });
@@ -46,6 +50,13 @@ function loginButtonClickEvent() {
   if (loggedInId === "") {
     loginErrorMessage.innerHTML = "잘못된 계정입니다.";
   }
+}
+
+function logoutButtonClickEvent() {
+  loginMessage.classList.add("hidden");
+  logoutButton.classList.add("hidden");
+  loginErrorMessage.classList.remove("hidden");
+  loggedInId = "";
 }
 
 function passwordEyeClickEvent() {
