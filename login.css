@@ -48,6 +48,12 @@ body {
   cursor: pointer;
 }
 
+.join-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hidden {
   display: none;
 }
