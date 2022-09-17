@@ -1,0 +1,50 @@
+body {
+}
+
+.header-section {
+  width: 100%;
+  display: flex;
+}
+
+.input-outerbox-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-section {
+  width: 320px;
+}
+
+.input-section > article {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.input-section > article > input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.input-title {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100px;
+  text-align: right;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.agree {
+}
+
+.hidden {
+  display: none;
+}

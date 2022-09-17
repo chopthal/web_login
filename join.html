@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="join.css" />
+    <script src="join.js" defer></script>
     <title>Create account</title>
   </head>
   <body>
-    <a href="./login.html"><button>메인 페이지로</button></a>
+    <section class="header-section">
+      <a href="./login.html"><button>메인 페이지로</button></a>
+    </section>
+    <section class="input-outerbox-section">
+      <section class="input-section">
+        <article>
+          <p class="input-title">아이디 : </p><input class='input-id' type="text" />
+        </article>
+        <p class="id-validation hidden">5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.</p>
+        <p class="id-duplication hidden">이미 존재하는 아이디 입니다..</p>
+        <article>
+          <p class="input-title">비밀번호 : </p><input class='input-password' type="password" /><i
+            class="bi bi-x-circle"
+          ></i>
+        </article>
+        <p class="password-validation hidden">8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
+        <article>
+          <p class="input-title">비밀번호 확인 : </p><input class='input-check-password' type="password" /><i
+            class="bi bi-x-circle"
+          ></i>
+          <p class="check-password-validation hidden">비밀번호가 일치하지 않습니다.</p>
+        </article>
+        <article><p class="input-title">이름 : </p class="input-title"><input class="input-name" type="text" /></article>
+        <p class="name-validation hidden">한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)</p>
+        <article><p class="input-title">전화번호 : </p class="input-title"><input type="text" /></article>
+      </section>
+    </section>
+    <section class="footer-section">
+      <div class="agree"><input class='agree-checkbox' id="agree-check" type="checkbox" />
+        <label for="agree-check">개인정보 수집에 동의합니다.</label></div>
+      <button class="join-button">가입하기</button>
+    </section>
   </body>
 </html>
