@@ -12,6 +12,8 @@ const nameInput = document.querySelector(".input-name");
 const nameValidation = document.querySelector(".name-validation");
 const joinButton = document.querySelector(".join-button");
 const agreeCheckbox = document.querySelector(".agree-checkbox");
+const phoneInput = document.querySelector(".input-phone");
+const phoneValidation = document.querySelector(".phone-validation");
 
 let accounts = {};
 const accountUrl = "./accounts.json";
@@ -54,6 +56,14 @@ nameInput.addEventListener("change", () => {
   regExp.test(nameInput.value)
     ? nameValidation.classList.add("hidden")
     : nameValidation.classList.remove("hidden");
+});
+
+phoneInput.addEventListener("change", () => {
+  phoneInput.value && (phoneInput.value = phoneInput.value.replaceAll("-", ""));
+  const regExp = /^0\d{2}\d{3,4}\d{4}$/;
+  regExp.test(phoneInput.value)
+    ? phoneValidation.classList.add("hidden")
+    : phoneValidation.classList.remove("hidden");
 });
 
 joinButton.addEventListener("click", () => {
